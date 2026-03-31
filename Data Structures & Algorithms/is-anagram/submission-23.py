@@ -1,0 +1,16 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        
+        if not s or not t:
+            return False
+        if len(s) != len(t):
+            return False
+
+        s_c = defaultdict(int)
+        t_c = defaultdict(int)
+
+        for i in range(len(s)):
+            s_c[s[i]] += 1
+            t_c[t[i]] += 1
+
+        return s_c == t_c
